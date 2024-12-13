@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CGV Đặt Vé</title>
+    <link rel="stylesheet" href="datve.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="navbar">
+      <div class="menu-trigger">
+        <span>☰ Menu</span>
+      </div>
+      <!-- Dropdown Menu -->
+      <div class="dropdown-menu">
+        <ul class="menu-list">
+          <li class="dropdown">
+            <a href="#">Phim ▼</a>
+            <ul class="submenu">
+              <li><a href="#">Phim Đang Chiếu</a></li>
+              <li><a href="#">Phim Sắp Chiếu</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Thành Viên ▼</a>
+            <ul class="submenu">
+              <li><a href="#">Tài Khoản CGV</a></li>
+              <li><a href="#">Quyền Lợi Thành Viên</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Cultureplex ▼</a>
+            <ul class="submenu">
+              <li><a href="#">Quầy Online</a></li>
+              <li><a href="#">Thuê Rạp & Vé Nhóm</a></li>
+              <li><a href="#">E-CGV</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="logo">
+        <img src="./images/logocgv.png" alt="CGV Logo" />
+      </div>
+      <div class="right-section">
+        <div class="auth">
+          <a href="dang-nhap.html"><i class="fas fa-user-circle"></i></a>
+        </div>
+        <div class="language-switch">
+          <a href="#" class="active">VN</a> | <a href="#">EN</a>
+        </div>
+      </div>
+    </header>
+    <script src="datve.js"></script>
+    <!-- Movie Details Section -->
+    <div class="movie-details">
+      <div class="movie-header">
+        <a
+          href="file:///E:/wamp/www/LTW_BTN_N7/trang_chu_cgv/trang_chu.html"
+          class="back-button"
+          style="color: black; text-decoration: none; font-weight: bold"
+          >← Back</a
+        >
+        <h1>Phim Đang Chiếu</h1>
+      </div>
+      <div class="movie-info">
+        <img
+          src="./images/congtubaclieu.jpg"
+          alt="Movie Poster"
+          class="poster"
+        />
+        <div class="movie-details-info">
+          <h2>CÔNG TỬ BẠC LIÊU</h2>
+          <ul>
+            <li><strong>Đạo diễn:</strong> Lý Minh Thắng</li>
+            <li>
+              <strong>Diễn viên:</strong> Song Luân, NSƯT Thành Lộc, Kaity
+              Nguyễn,...
+            </li>
+            <li><strong>Thể loại:</strong> Hài, Tâm Lý, Tiểu Sử</li>
+            <li><strong>Khởi chiếu:</strong> 06/12/2024</li>
+            <li><strong>Thời lượng:</strong> 113 phút</li>
+            <li><strong>Ngôn ngữ:</strong> Tiếng Việt - Phụ đề Tiếng Anh</li>
+            <li>
+              <strong>Rated:</strong> T13 - PHIM ĐƯỢC PHỔ BIẾN ĐẾN NGƯỜI XEM TỪ
+              ĐỦ 13 TUỔI TRỞ LÊN (13+)
+            </li>
+          </ul>
+          <div class="movie-rating">
+            <img src="./images/T13.jpg" alt="T13 Rating" />
+            <img src="./images/starium.jpg" alt="Starium Logo" />
+          </div>
+        </div>
+      </div>
+      <div class="movie-description">
+        <p>
+          Phim kể về cuộc đời Ba Hơn (Song Luân), cậu ấm trong gia đình giàu có
+          quyền lực nhất xứ Bạc Liêu, đứng đầu là ông Hội đồng Lịnh (NSƯT Thành
+          Lộc). Sau khi đi du học ở Pháp về, Ba Hơn đốt tiền vào những thú chơi
+          ngông của mình, khiến gia đình không khỏi đau đầu. “Công tử Bạc Liêu
+          đi đến đầu là niềm vui theo đến đó”, câu cửa miệng được Ba Hơn lặp đi
+          lặp lại, là kim chỉ nam cho những hành động của mình. Trên hành trình
+          trưởng thành, công tử Bạc Liêu không ít lần vấp ngã, khiến anh tỉnh
+          mộng và chiêm nghiệm được nhiều bài học cuộc sống, tình cảm gia đình.
+        </p>
+      </div>
+      <section class="date-selection">
+        <h2>Chọn ngày</h2>
+        <div class="dates" id="dates-container">
+          <!-- Ngày sẽ được thêm tự động bởi JavaScript -->
+        </div>
+      </section>
+      <!-- Chọn giờ -->
+      <section class="time-selection">
+        <h2>Chọn khung giờ</h2>
+        <div class="times">
+          <button data-time="10:00">10:00</button>
+          <button data-time="12:30">12:30</button>
+          <button data-time="15:00">15:00</button>
+        </div>
+      </section>
+
+      <div class="seat-grid">
+        <div class="seat-column">
+          <div class="seat">A1</div>
+          <div class="seat">A2</div>
+          <div class="seat">A3</div>
+          <div class="seat">A4</div>
+          <div class="seat">A5</div>
+          <div class="seat">B1</div>
+          <div class="seat">B2</div>
+          <div class="seat">B3</div>
+          <div class="seat">B4</div>
+          <div class="seat">B5</div>
+          <div class="seat">C1</div>
+          <div class="seat">C2</div>
+          <div class="seat">C3</div>
+          <div class="seat">C4</div>
+          <div class="seat">C5</div>
+          <div class="seat">D1</div>
+          <div class="seat">D2</div>
+          <div class="seat">D3</div>
+          <div class="seat">D4</div>
+          <div class="seat">D5</div>
+          <div class="seat">E1</div>
+          <div class="seat">E2</div>
+          <div class="seat">E3</div>
+          <div class="seat">E4</div>
+          <div class="seat">E5</div>
+          <div class="seat">F1</div>
+          <div class="seat">F2</div>
+          <div class="seat">F3</div>
+          <div class="seat">F4</div>
+          <div class="seat">F5</div>
+          <div class="seat">G1</div>
+          <div class="seat">G2</div>
+          <div class="seat">G3</div>
+          <div class="seat">G4</div>
+          <div class="seat">G5</div>
+          <div class="seat">H1</div>
+          <div class="seat">H2</div>
+          <div class="seat">H3</div>
+          <div class="seat">H4</div>
+          <div class="seat">H5</div>
+          <div class="seat">I1</div>
+          <div class="seat">I2</div>
+          <div class="seat">I3</div>
+          <div class="seat">I4</div>
+          <div class="seat">I5</div>
+          <div class="seat">J1</div>
+          <div class="seat">J2</div>
+          <div class="seat">J3</div>
+          <div class="seat">J4</div>
+          <div class="seat">J5</div>
+        </div>
+        <div class="seat-column">
+          <div class="seat">A6</div>
+          <div class="seat">A7</div>
+          <div class="seat">A8</div>
+          <div class="seat">A9</div>
+          <div class="seat">A10</div>
+          <div class="seat">B6</div>
+          <div class="seat">B7</div>
+          <div class="seat">B8</div>
+          <div class="seat">B9</div>
+          <div class="seat">B10</div>
+          <div class="seat">C6</div>
+          <div class="seat">C7</div>
+          <div class="seat">C8</div>
+          <div class="seat">C9</div>
+          <div class="seat">C10</div>
+          <div class="seat">D6</div>
+          <div class="seat">D7</div>
+          <div class="seat">D8</div>
+          <div class="seat">D9</div>
+          <div class="seat">D10</div>
+          <div class="seat">E6</div>
+          <div class="seat">E7</div>
+          <div class="seat">E8</div>
+          <div class="seat">E9</div>
+          <div class="seat">E10</div>
+          <div class="seat">F6</div>
+          <div class="seat">F7</div>
+          <div class="seat">F8</div>
+          <div class="seat">F9</div>
+          <div class="seat">F10</div>
+          <div class="seat">G6</div>
+          <div class="seat">G7</div>
+          <div class="seat">G8</div>
+          <div class="seat">G9</div>
+          <div class="seat">G10</div>
+          <div class="seat">H6</div>
+          <div class="seat">H7</div>
+          <div class="seat">H8</div>
+          <div class="seat">H9</div>
+          <div class="seat">H10</div>
+          <div class="seat">I6</div>
+          <div class="seat">I7</div>
+          <div class="seat">I8</div>
+          <div class="seat">I9</div>
+          <div class="seat">I10</div>
+          <div class="seat">J6</div>
+          <div class="seat">J7</div>
+          <div class="seat">J8</div>
+          <div class="seat">J9</div>
+          <div class="seat">J10</div>
+        </div>
+      </div>
+
+      <section class="summary">
+        <h2>Thông tin đặt vé</h2>
+        <div class="summary-container">
+          <p>
+            <span class="summary-label">Ngày:</span>
+            <span id="selected-date">Chưa chọn</span>
+          </p>
+          <p>
+            <span class="summary-label">Giờ:</span>
+            <span id="selected-time">Chưa chọn</span>
+          </p>
+          <p>
+            <span class="summary-label">Ghế:</span>
+            <span id="selected-seats">Chưa chọn</span>
+          </p>
+        </div>
+      </section>
+
+      <button class="confirm-btn" onclick="window.location.href='payment.html'">
+        Xác nhận
+      </button>
+    </div>
+
+    <script>
+      const dates = document.querySelectorAll(".dates span");
+      const times = document.querySelectorAll(".times button");
+      const seats = document.querySelectorAll(".seat:not(.booked)");
+
+      let selectedDate = "";
+      let selectedTime = "";
+      const selectedSeats = new Set();
+
+      // Cập nhật ngày
+      dates.forEach((date) => {
+        date.addEventListener("click", () => {
+          dates.forEach((d) => d.classList.remove("active"));
+          date.classList.add("active");
+          selectedDate = date.dataset.date;
+          document.getElementById("selected-date").textContent = selectedDate;
+        });
+      });
+
+      // Cập nhật giờ
+      times.forEach((time) => {
+        time.addEventListener("click", () => {
+          times.forEach((t) => t.classList.remove("active"));
+          time.classList.add("active");
+          selectedTime = time.dataset.time;
+          document.getElementById("selected-time").textContent = selectedTime;
+        });
+      });
+
+      // Chọn ghế
+      seats.forEach((seat) => {
+        seat.addEventListener("click", () => {
+          const seatNumber = seat.textContent;
+          if (selectedSeats.has(seatNumber)) {
+            selectedSeats.delete(seatNumber);
+            seat.classList.remove("selected");
+          } else {
+            selectedSeats.add(seatNumber);
+            seat.classList.add("selected");
+          }
+          document.getElementById("selected-seats").textContent =
+            Array.from(selectedSeats).join(", ");
+        });
+      });
+    </script>
+    <footer class="footer-section">
+      <div class="footer-top">
+        <ul class="footer-menu">
+          <li>
+            <h3>CGV Việt Nam</h3>
+            <ul>
+              <li><a href="#">Giới Thiệu</a></li>
+              <li><a href="#">Tiện Ích Online</a></li>
+              <li><a href="#">Thẻ Quà Tặng</a></li>
+              <li><a href="#">Tuyển Dụng</a></li>
+              <li><a href="#">Liên Hệ Quảng Cáo CGV</a></li>
+              <li><a href="#">Dành cho đối tác</a></li>
+            </ul>
+          </li>
+          <li>
+            <h3>Điều khoản sử dụng</h3>
+            <ul>
+              <li><a href="#">Điều Khoản Chung</a></li>
+              <li><a href="#">Điều Khoản Giao Dịch</a></li>
+              <li><a href="#">Chính Sách Thanh Toán</a></li>
+              <li><a href="#">Chính Sách Bảo Mật</a></li>
+              <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+            </ul>
+          </li>
+          <li>
+            <h3>Kết nối với chúng tôi</h3>
+            <div class="social-icons">
+              <a href="#"><img src="./images/facebook.png" alt="Facebook" /></a>
+              <a href="#"><img src="./images/youtube.png" alt="YouTube" /></a>
+              <a href="#"
+                ><img src="./images/instagram.png" alt="Instagram"
+              /></a>
+              <a href="#"><img src="./images/zalo.png" alt="Zalo" /></a>
+            </div>
+            <a href="#" class="certification">
+              <img
+                src="./images/thongbaobocongthuong.png"
+                alt="Đã Thông Báo Bộ Công Thương"
+              />
+            </a>
+          </li>
+          <li>
+            <h3>Chăm sóc khách hàng</h3>
+            <ul>
+              <li>Hotline: 1900 6017</li>
+              <li>Giờ làm việc: 8:00 - 22:00</li>
+              <li>Email hỗ trợ: hoidap@cgv.vn</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          <strong>CÔNG TY TNHH CJ CGV VIỆT NAM</strong><br />
+          Giấy Chứng nhận đăng ký doanh nghiệp: 0303675393 đăng ký lần đầu ngày
+          31/7/2008, được cấp bởi Sở Kế hoạch và Đầu tư Thành phố Hồ Chí
+          Minh.<br />
+          Địa chỉ: Lầu 2, số 7/28, Đường Thành Thái, Phường 14, Quận 10, Thành
+          phố Hồ Chí Minh, Việt Nam.<br />
+          Đường dây nóng (Hotline): 1900 6017<br />
+          COPYRIGHT 2017 CJ CGV VIETNAM CO., LTD. ALL RIGHTS RESERVED
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
